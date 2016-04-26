@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +18,8 @@ namespace PintrestClone.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual ICollection Pins { get; set; } = new List<Pin>();
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
