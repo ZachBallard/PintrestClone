@@ -1,31 +1,53 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<div ng-controller="pinController">
+    <div class="container text-right" >
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Pin</button>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-left">New Pin</h4>
+                    </div>
+                    <div class="modal-body text-left">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="PhotoUrl">Photo URL</label>
+                                <input class="form-control" type="text" ng-model="newPinInfo.PhotoUrl" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Body">Pin Body</label>
+                                <input class="form-control" type="text" ng-model="newPinInfo.Body" />
+                            </div>
+                            <div class="form-group">
+                                <label for="PinUrl">Pin URL</label>
+                                <input class="form-control" type="text" ng-model="newPinInfo.PinUrl" />
+                            </div>
+                            <button type="button" ng-click="savePin()">Create</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="item" ng-repeat="pin in pins">
+                        <div class="well text-center">
+                            <img class="img-responsive" src="{{pin.PhotoUrl}}"/>
+                            <br/>
+                            <p>{{pin.Body}}</p>
+                            <a href="{{pin.PinUrl}}">Full Site</a>
+                        </div>
+                </div>
+            </div>
+        </div>
 </div>

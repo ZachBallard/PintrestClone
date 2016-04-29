@@ -19,7 +19,7 @@ namespace PintrestClone.Models
             return userIdentity;
         }
 
-        public virtual ICollection Pins { get; set; } = new List<Pin>();
+        public virtual ICollection<Pin> Pins { get; set; } = new List<Pin>();
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

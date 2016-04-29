@@ -177,6 +177,10 @@
     <Compile Include="Migrations\201604261810036_addpins.Designer.cs">
       <DependentUpon>201604261810036_addpins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604291633521_fixpins.cs" />
+    <Compile Include="Migrations\201604291633521_fixpins.Designer.cs">
+      <DependentUpon>201604291633521_fixpins.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -186,6 +190,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app.js" />
+    <Content Include="App\Factory.js" />
+    <Content Include="App\PinController.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -255,6 +262,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604261810036_addpins.resx">
       <DependentUpon>201604261810036_addpins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604291633521_fixpins.resx">
+      <DependentUpon>201604291633521_fixpins.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
